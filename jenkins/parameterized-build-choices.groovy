@@ -12,7 +12,7 @@ pipeline {
   stages {
     stage("Wat") {
       steps {
-        echo "selectedEnvironment: ${params.environment}"
+        echo "selectedEnvironment for production: ${params.environment}"
       }
     }
   }
