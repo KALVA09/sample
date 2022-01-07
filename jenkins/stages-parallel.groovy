@@ -5,7 +5,8 @@ pipeline {
     stage('Stage 1') {
       steps {
         script {
-          echo 'git pull https://github.com/KALVA09/sample.git'
+          echo 'git pull'
+	  sh 'git pull origin master'
         }
       }
     }
@@ -16,14 +17,14 @@ pipeline {
         stage('Stage 2') {
           steps {
             script {
-              sh 'stages-parallel.groovy'
+              sh 'when-directive.groovy cat stage1 >> stage5 '
             }
           }
         }
         stage('Stage 3') {
           steps {
             script {
-              sh 'git push origin master https://github.com/KALVA09/sample.git'
+              sh 'git push orign master'
             }
           }
         }
