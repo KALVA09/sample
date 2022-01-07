@@ -5,7 +5,7 @@ pipeline {
     stage('Stage 1') {
       steps {
         script {
-          echo 'This whole pipeline will take ~20sec to finish.'
+          echo 'git pull https://github.com/KALVA09/sample.git'
         }
       }
     }
@@ -16,15 +16,14 @@ pipeline {
         stage('Stage 2') {
           steps {
             script {
-              sh 'sleep 20'
+              sh 'stages-parallel.groovy'
             }
           }
         }
-
         stage('Stage 3') {
           steps {
             script {
-              sh 'sleep 20'
+              sh 'git push origin master https://github.com/KALVA09/sample.git'
             }
           }
         }
