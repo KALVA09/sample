@@ -17,7 +17,7 @@ pipeline {
         stage('Stage 2') {
           steps {
             script {
-              sh 'when-directive.groovy cat stage1 >> stage5 '
+              sh 'jenkins/when-directive.groovy cat stage1 >> stage5 '
             }
           }
         }
